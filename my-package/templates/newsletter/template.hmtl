@@ -1,0 +1,15 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>simpleTemplateMailer newsletter message<h1>
+
+{{lang.jsonMessage}}
+
+{{{footer}}}
+</body>
+</html
