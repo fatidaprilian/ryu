@@ -1,0 +1,5 @@
+{
+    "newsletter": "this is the subject for template 'newsletter'; mustache can be used here too: {{jsonMessage}}",
+    "jsonMessage": "hello, I'm a message from the translation file" ,
+    "footer": "<div class='footer'><div>"
+}
