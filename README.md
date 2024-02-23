@@ -1,13 +1,20 @@
-simple-template-mailer
-Simple manage templates and translations, bulid and send mails. For medium projects. Uses "mustache" to compile html, "inline" for embedding external referneces (css, js, images) into html and nodemailer for sending. Adds a plain text version to every sent html mail.
+# simple-template-mailer
 
-ToDo
-test the examples
-testing
-Installation
-npm install simple-template-mailer
+ Simple manage templates and translations, bulid and send mails. For medium projects.
+ Uses "mustache" to compile html, "inline" for embedding external referneces (css, js, images)
+ into html and nodemailer for sending. Adds a plain text version to every sent html mail.
 
-Example
+## ToDo
+ * test the examples
+ * testing
+
+## Installation
+>npm install simple-template-mailer
+
+## Example
+
+```js
+
 // init the module
 var simpleTemplateMailer = require('simple-template-mailer');
 
@@ -39,15 +46,20 @@ mailer.send(
    function (err, info){
       console.log(err, info);
    });
-Corresponding translation file
 
+```
+
+Corresponding translation file
+```json
 {
     "newsletter": "this is the subject for template 'newsletter'; mustache can be used here too: {{jsonMessage}}",
     "jsonMessage": "hello, I'm a message from the translation file" ,
     "footer": "<div class='footer'><div>"
 }
-Corresponding template file
+```
 
+Corresponding template file
+```html
 <html>
 
 <head>
@@ -68,9 +80,13 @@ Corresponding template file
 
 </body>
 </html>
-Folder structure in your project
-Note: The translations folder holds all translations for the mails + the subject messages (json key has the same name, as the template).
 
+```
+
+### Folder structure in your project
+
+Note: The translations folder holds all translations for the mails + the subject messages (json key has the same name, as the template).
+```
 
 mail
   |__translations (for mustache, and also subjects)
@@ -92,9 +108,11 @@ mail
           |_ template.html
           |_ styles.css
 
-Get compiled HTML templates
-Can be used to send a compiled default mail text to the user, that can modified some passages before the text will be sent.
+```
 
+### Get compiled HTML templates
+Can be used to send a compiled default mail text to the user, that can modified some passages before the text will be sent.
+```js
 mailer.getTemplate({ // template options
     name: 'newsletter', // template folder name
     language: "de", // select json translation file
@@ -106,12 +124,21 @@ mailer.getTemplate({ // template options
       console.log(err, template);
   }
 );
-Use Nodemailer direct
+```
+
+
+### Use Nodemailer direct
+```js
 mailer.send(null, {to:["jon.doe@gmx.io"], text:"HelloWorld"});
-Usage of nodemailer and inline
+
+```
+
+### Usage of nodemailer and inline
 https://nodemailer.com/message/
 
 https://www.npmjs.com/package/inline-source
 
-License
-ISC. Feel free to use.
+
+
+### License
+ ISC. Feel free to use.
